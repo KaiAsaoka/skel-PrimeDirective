@@ -27,7 +27,35 @@ public class PrimeFactorSequence {
      */
     public List<Integer> primeFactorSequence() {
         List<Integer> seq = new ArrayList<>();
-        // TODO: Implement this method
+        int number = 0;
+
+        while (number <= upperBound) {
+            int count = 0;
+            int divisor = 2;
+            int numtoDivide = number;
+
+            if (number < 2) {
+                seq.add(0);
+                number++;
+
+            } else {
+                while (divisor <= number) {
+
+                    if (numtoDivide % divisor == 0) {
+                        count++;
+                        numtoDivide = numtoDivide / divisor;
+
+
+                    }
+                    else {
+                        divisor++;
+                    }
+
+                }
+                seq.add(count);
+                number++;
+            }
+        }
         return seq;
     }
 
